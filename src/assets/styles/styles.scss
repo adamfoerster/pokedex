@@ -1,0 +1,124 @@
+@import '~@angular/material/theming';
+$custom-typography: mat-typography-config(
+  $font-family: 'Titillium Web'
+);
+$md-mcgpalette0: (
+  50: #eff8f2,
+  100: #d6eede,
+  200: #bbe3c8,
+  300: #a0d7b2,
+  400: #8bcfa2,
+  500: #77c691,
+  600: #6fc089,
+  700: #64b97e,
+  800: #5ab174,
+  900: #47a462,
+  A100: #fdfffe,
+  A200: #caffd9,
+  A400: #97ffb4,
+  A700: #7effa1,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+$md-mcgpalette1: (
+  50: #faf9f5,
+  100: #f3f1e7,
+  200: #ece7d7,
+  300: #e4ddc7,
+  400: #ded6bb,
+  500: #d8cfaf,
+  600: #d4caa8,
+  700: #cec39f,
+  800: #c8bd96,
+  900: #bfb286,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #fffae7,
+  A700: #fff4ce,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+$md-mcgpalette2: (
+  50: #fdf2f2,
+  100: #fadfde,
+  200: #f6c9c8,
+  300: #f2b3b1,
+  400: #f0a3a1,
+  500: #ed9390,
+  600: #eb8b88,
+  700: #e8807d,
+  800: #e57673,
+  900: #e06461,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #ffe7e6,
+  A700: #ffcecd,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+$custom-theme: mat-light-theme(
+  $md-mcgpalette0,
+  $md-mcgpalette1,
+  $md-mcgpalette2
+);
+
+@include angular-material-theme($custom-theme);
+
+@include mat-core($custom-typography);
+
+html {
+  font-size: 16px;
+  font-family: 'Titillium Web', sans-serif;
+
+  @media screen and (min-width: 900px) {
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+  }
+}
