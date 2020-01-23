@@ -1,0 +1,44 @@
+{
+  "pokemons": [
+    {
+      "id": "1",
+      "name": "bubasaur",
+      "description": "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.",
+      "height": 1.2,
+      "weight": 3.2,
+      "category_id": 1,
+      "hability_id": 1,
+      "attack": 3,
+      "defense": 2,
+      "speed": 3
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Seed"
+    }
+  ],
+  "habilities": [
+    {
+      "id": "1",
+      "name": "Overgrown",
+      "description": "Powers up Grass-type moves when the Pokémon is in trouble."
+    },
+    {
+      "id": "086b06b1-7de8-4d17-8482-297d75cf28fb",
+      "name": "Blaze",
+      "description": "Powers up Fire-type moves when the Pokémon is in trouble."
+    },
+    {
+      "id": "45fa265b-9433-4460-91b9-00bc4a64f53e",
+      "name": "Torrent",
+      "description": "Powers up Water-type moves when the Pokémon is in trouble."
+    },
+    {
+      "id": "ebffc106-c043-4122-b01e-54131d6b9f2e",
+      "name": "Shed Skin",
+      "description": "The Pokémon may heal its own status conditions."
+    }
+  ]
+}
