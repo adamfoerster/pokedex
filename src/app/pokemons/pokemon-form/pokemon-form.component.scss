@@ -20,8 +20,16 @@
 .col {
   flex: 1;
   margin-right: 20px;
+  & > * {
+    width: 100%;
+  }
 }
 
 .col:last-child {
   margin-right: 0;
+}
+@media only screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
 }

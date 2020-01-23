@@ -1,0 +1,15 @@
+mat-card {
+  margin: 0 2rem 2rem 0;
+  height: calc(350px - 2rem);
+  mat-card-content {
+    padding: 1rem;
+  }
+  mat-card-actions {
+    padding: 1.25rem;
+  }
+  @media only screen and (max-width: 600px) {
+    mat-card {
+      height: calc(400px - 2rem);
+    }
+  }
+}

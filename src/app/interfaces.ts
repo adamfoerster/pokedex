@@ -16,7 +16,9 @@ export interface IPokemon {
   height: number;
   weight: number;
   category_id: string;
+  category?: string;
   hability_id: string;
+  hability?: string;
   speed: number;
   attack: number;
   defense: number;

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import { Observable, combineLatest } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
@@ -9,12 +9,20 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent {
-  isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
+  isHandset$: Observable<boolean> = combineLatest([
+    this.breakpointObserver
+      .observe(Breakpoints.Medium)
+      .pipe(map(result => !result.matches)),
+    this.breakpointObserver
+      .observe(Breakpoints.Large)
+      .pipe(map(result => !result.matches)),
+    this.breakpointObserver
+      .observe(Breakpoints.XLarge)
+      .pipe(map(result => !result.matches))
+  ]).pipe(
+    map(([m, l, x]) => m && l && x),
+    shareReplay()
+  );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 }

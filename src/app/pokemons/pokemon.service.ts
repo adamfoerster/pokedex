@@ -1,9 +1,12 @@
-import { IPokemon } from './../interfaces';
+import { CategoryService } from './../categories/category.service';
+import { HabilityService } from './../habilities/hability.service';
+import { IPokemon, IHability, ICategory } from './../interfaces';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, combineLatest } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment as env } from '../../environments/environment';
 import { uuidv4 } from '../shared/helpers';
+import { filter, first, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +22,42 @@ export class PokemonService {
   get selectedPokemon$() {
     return this.selectedPokemon.asObservable();
   }
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private habilities: HabilityService,
+    private categories: CategoryService
+  ) {}
 
   fetchPokemons() {
-    return this.http
-      .get<IPokemon[]>(`${env.api}pokemons`)
-      .subscribe(habs => this.pokemons.next(habs));
+    return combineLatest([
+      this.http.get<IPokemon[]>(`${env.api}pokemons`),
+      this.habilities.habilities$.pipe(
+        filter(habs => !!habs.length),
+        first()
+      ),
+      this.categories.categories$.pipe(
+        filter(habs => !!habs.length),
+        first()
+      )
+    ])
+      .pipe(
+        map(([pokes, habs, cats]) => {
+          return pokes.map(p => this.mapWithCategoryAndHability(p, habs, cats));
+        })
+      )
+      .subscribe(pokes => this.pokemons.next(pokes));
+  }
+
+  mapWithCategoryAndHability(
+    pokemon: IPokemon,
+    habs: IHability[],
+    cats: ICategory[]
+  ): IPokemon {
+    return {
+      ...pokemon,
+      category: cats.find(cat => cat.id === pokemon.category_id).name,
+      hability: habs.find(hab => hab.id === pokemon.hability_id).name
+    };
   }
 
   loadPokemon(id) {

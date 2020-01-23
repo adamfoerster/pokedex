@@ -1,2 +1,10 @@
-<pkd-pokemon-form></pkd-pokemon-form>
-<pkd-pokemon-card></pkd-pokemon-card>
+<button mat-fab color="primary" class="fab" (click)="openForm()">+</button>
+<div class="poke-container">
+  <pkd-pokemon-card
+    *ngFor="let pokemon of service.pokemons$ | async"
+    [pokemon]="pokemon"
+  ></pkd-pokemon-card>
+</div>
+<ng-template #form>
+  <pkd-pokemon-form></pkd-pokemon-form>
+</ng-template>

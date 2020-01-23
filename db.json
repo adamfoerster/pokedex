@@ -6,11 +6,35 @@
       "description": "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.",
       "height": 1.2,
       "weight": 3.2,
-      "category_id": 1,
-      "hability_id": 1,
+      "category_id": "1a921bca-0156-4ea0-a8bd-b748090940xx",
+      "hability_id": "186b06b1-7de8-4d17-8482-297d75cf28fb",
       "attack": 3,
       "defense": 2,
       "speed": 3
+    },
+    {
+      "id": "22404b35-e7d5-47fd-af1d-f9b478c8ab14",
+      "name": "Metapod",
+      "description": "The shell covering this Pokémon's body is as hard as an iron slab. Metapod does not move very much. It stays still because it is preparing its soft innards for evolution inside the hard shell.",
+      "height": 0.7,
+      "weight": 9.9,
+      "attack": 1,
+      "defense": 3,
+      "speed": 2,
+      "category_id": "ca921bca-0156-4ea0-a8bd-b74809094043",
+      "hability_id": "ebffc106-c043-4122-b01e-54131d6b9f2e"
+    },
+    {
+      "id": "e1652e9f-a9e6-4707-9b2f-41bd40e90876",
+      "name": "Charmander",
+      "description": "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.",
+      "height": 0.6,
+      "weight": 8.5,
+      "attack": 3,
+      "defense": 2,
+      "speed": 4,
+      "category_id": "185ab040-5c2c-42a2-8f04-b796ba6def8e",
+      "hability_id": "086b06b1-7de8-4d17-8482-297d75cf28fb"
     }
   ],
   "categories": [
@@ -21,6 +45,10 @@
     {
       "id": "ca921bca-0156-4ea0-a8bd-b74809094043",
       "name": "Cocoon"
+    },
+    {
+      "id": "185ab040-5c2c-42a2-8f04-b796ba6def8e",
+      "name": "Lizard"
     }
   ],
   "habilities": [
