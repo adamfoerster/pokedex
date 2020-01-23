@@ -1,33 +1,31 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { HabilityService } from './../hability.service';
+import { IHability } from './../../interfaces';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
-import {
-  HabilitiesTableDataSource,
-  HabilitiesTableItem
-} from './habilities-table-datasource';
 
 @Component({
   selector: 'pkd-habilities-table',
   templateUrl: './habilities-table.component.html',
   styleUrls: ['./habilities-table.component.scss']
 })
-export class HabilitiesTableComponent implements AfterViewInit, OnInit {
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: false }) sort: MatSort;
-  @ViewChild(MatTable, { static: false }) table: MatTable<HabilitiesTableItem>;
-  dataSource: HabilitiesTableDataSource;
+export class HabilitiesTableComponent implements AfterViewInit {
+  @ViewChild(MatTable, { static: false }) table: MatTable<IHability>;
 
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'name', 'actions'];
 
-  ngOnInit() {
-    this.dataSource = new HabilitiesTableDataSource();
-  }
+  constructor(private service: HabilityService) {}
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+    this.table.dataSource = this.service.habilities$;
+  }
+
+  edit(id: string) {
+    this.service.loadHability(id);
+  }
+
+  remove(id: string) {
+    this.service
+      .removeHability(id)
+      .subscribe(() => this.service.fetchHabilities());
   }
 }

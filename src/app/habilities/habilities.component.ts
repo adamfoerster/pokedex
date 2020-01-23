@@ -1,3 +1,4 @@
+import { HabilityService } from './hability.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./habilities.component.sass']
 })
 export class HabilitiesComponent implements OnInit {
-  constructor() {}
+  constructor(private service: HabilityService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.service.fetchHabilities();
+  }
 }
