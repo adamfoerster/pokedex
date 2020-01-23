@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PokemonsRoutingModule } from './pokemons-routing.module';
 import { PokemonsComponent } from './pokemons.component';
 import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -18,6 +19,7 @@ import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
   imports: [
     CommonModule,
     PokemonsRoutingModule,
+    MatIconModule,
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
@@ -25,6 +27,7 @@ import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule
-  ]
+  ],
+  entryComponents: [PokemonFormComponent]
 })
 export class PokemonsModule {}

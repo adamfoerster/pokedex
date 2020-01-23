@@ -1,7 +1,7 @@
 .poke-container {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: calc(350px + 2rem);
+  grid-template-rows: calc(380px + 2rem);
   width: calc(100% + 2rem);
 }
 .fab {
@@ -13,6 +13,5 @@
 @media only screen and (max-width: 600px) {
   .poke-container {
     grid-template-columns: 100%;
-    // grid-template-rows: calc(450px + 2rem) calc(450px + 2rem) calc(450px + 2rem) calc(450px + 2rem);
   }
 }

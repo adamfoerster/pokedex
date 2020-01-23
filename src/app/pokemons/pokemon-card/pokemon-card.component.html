@@ -4,6 +4,11 @@
     <mat-card-subtitle>Categoria: {{ pokemon.category }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
+    <h3>
+      <span>Ataq. {{ pokemon.attack }}</span> |
+      <span>Def. {{ pokemon.defense }}</span> |
+      <span>Veloc. {{ pokemon.speed }}</span>
+    </h3>
     <p>
       <b>Habilidade: {{ pokemon.hability }}</b
       ><br />
@@ -12,10 +17,19 @@
       <b>Altura</b> {{ pokemon.height }}m<br />
       <b>Peso</b> {{ pokemon.weight }}kg<br />
     </p>
+    <br />
   </mat-card-content>
   <mat-card-actions>
-    <span>Ataq. {{ pokemon.attack }}</span> |
-    <span>Def. {{ pokemon.defense }}</span> |
-    <span>Veloc. {{ pokemon.speed }}</span>
+    <button mat-button color="primary" (click)="edit(pokemon.id)">
+      <mat-icon aria-label="Editar">build</mat-icon>Editar
+    </button>
+    <button mat-button color="warn" (click)="openConfirm(pokemon.id)">
+      <mat-icon aria-label="Remover">delete</mat-icon> Remover
+    </button>
   </mat-card-actions>
 </mat-card>
+<ng-template #confirm>
+  <h3>Tem certeza que deseja remover este Pokemon?</h3>
+  <button mat-button mat-dialog-close (click)="remove()">Sim</button> &nbsp;
+  <button mat-button mat-dialog-close>Não</button>
+</ng-template>

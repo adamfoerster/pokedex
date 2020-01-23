@@ -1,8 +1,10 @@
 mat-card {
   margin: 0 2rem 2rem 0;
-  height: calc(350px - 2rem);
+  height: calc(380px - 2rem);
   mat-card-content {
     padding: 1rem;
+    height: calc(100% - 9rem);
+    overflow-y: auto;
   }
   mat-card-actions {
     padding: 1.25rem;

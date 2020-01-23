@@ -1,4 +1,6 @@
-<button mat-fab color="primary" class="fab" (click)="openForm()">+</button>
+<button mat-fab color="primary" class="fab" (click)="openForm()">
+  <mat-icon>add</mat-icon>
+</button>
 <div class="poke-container">
   <pkd-pokemon-card
     *ngFor="let pokemon of service.pokemons$ | async"

@@ -1,3 +1,4 @@
+import { MatDialog } from '@angular/material/dialog';
 import { HabilityService } from './../../habilities/hability.service';
 import { CategoryService } from './../../categories/category.service';
 import { PokemonService } from './../pokemon.service';
@@ -29,6 +30,7 @@ export class PokemonFormComponent implements OnInit, OnDestroy {
   constructor(
     private fb: FormBuilder,
     private service: PokemonService,
+    private dialog: MatDialog,
     public category: CategoryService,
     public hability: HabilityService
   ) {}
@@ -46,6 +48,7 @@ export class PokemonFormComponent implements OnInit, OnDestroy {
     return this.service.savePokemon(this.pokeForm.value).subscribe(() => {
       this.service.fetchPokemons();
       this.pokeForm.reset();
+      this.dialog.closeAll();
     });
   }
 
