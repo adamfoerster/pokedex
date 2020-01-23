@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -14,6 +15,7 @@ describe('HabilitiesTableComponent', () => {
     TestBed.configureTestingModule({
       declarations: [HabilitiesTableComponent],
       imports: [
+        HttpClientModule,
         NoopAnimationsModule,
         MatPaginatorModule,
         MatSortModule,

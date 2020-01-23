@@ -1,6 +1,15 @@
+import { HttpClientModule } from '@angular/common/http';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PokemonsComponent } from './pokemons.component';
+import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 describe('PokemonsComponent', () => {
   let component: PokemonsComponent;
@@ -8,7 +17,20 @@ describe('PokemonsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PokemonsComponent]
+      declarations: [
+        PokemonsComponent,
+        PokemonCardComponent,
+        PokemonFormComponent
+      ],
+      imports: [
+        HttpClientModule,
+        MatDialogModule,
+        MatIconModule,
+        MatCardModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatSelectModule
+      ]
     }).compileComponents();
   }));
 

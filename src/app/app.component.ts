@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'pkd-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  template: `
+    <pkd-navigation>
+      <router-outlet></router-outlet>
+    </pkd-navigation>
+  `
 })
-export class AppComponent {
-  title = 'pokedex';
-}
+export class AppComponent {}

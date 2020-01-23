@@ -8,6 +8,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 
 import { PokemonFormComponent } from './pokemon-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('PokemonFormComponent', () => {
   let component: PokemonFormComponent;
@@ -17,13 +20,23 @@ describe('PokemonFormComponent', () => {
     TestBed.configureTestingModule({
       declarations: [PokemonFormComponent],
       imports: [
+        HttpClientModule,
         NoopAnimationsModule,
         ReactiveFormsModule,
         MatButtonModule,
         MatCardModule,
+        MatDialogModule,
         MatInputModule,
         MatRadioModule,
-        MatSelectModule
+        MatSelectModule,
+        MatIconModule,
+        MatInputModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatSelectModule,
+        MatRadioModule,
+        MatCardModule,
+        ReactiveFormsModule
       ]
     }).compileComponents();
   }));
