@@ -3,8 +3,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'pkd-habilities',
-  templateUrl: './habilities.component.html',
-  styleUrls: ['./habilities.component.sass']
+  template: `
+    <pkd-habilities-form></pkd-habilities-form>
+    <pkd-habilities-table></pkd-habilities-table>
+  `
 })
 export class HabilitiesComponent implements OnInit {
   constructor(private service: HabilityService) {}

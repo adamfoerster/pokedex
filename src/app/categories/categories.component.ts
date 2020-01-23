@@ -1,12 +1,17 @@
+import { CategoryService } from './category.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'pkd-categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.sass']
+  template: `
+    <pkd-categories-form></pkd-categories-form>
+    <pkd-categories-table></pkd-categories-table>
+  `
 })
 export class CategoriesComponent implements OnInit {
-  constructor() {}
+  constructor(private service: CategoryService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.service.fetchCategories();
+  }
 }

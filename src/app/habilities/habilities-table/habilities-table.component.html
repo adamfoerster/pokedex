@@ -1,12 +1,10 @@
 <div class="mat-elevation-z8">
   <table mat-table class="full-width-table" aria-label="Elements">
-    <!-- Id Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef><h2>Id</h2></th>
       <td mat-cell *matCellDef="let row">{{ row.id }}</td>
     </ng-container>
 
-    <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef><h2>Nome</h2></th>
       <td mat-cell *matCellDef="let row">{{ row.name }}</td>
