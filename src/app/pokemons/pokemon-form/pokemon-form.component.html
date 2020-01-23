@@ -1,0 +1,109 @@
+<form [formGroup]="pokeForm" (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Pokemon</mat-card-title>
+    </mat-card-header>
+    <input type="hidden" formControlName="id" />
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nome" formControlName="name" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Descrição"
+              formControlName="description"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Categoria</mat-label>
+            <mat-select formControlName="category_id">
+              <mat-option
+                *ngFor="let cat of category.categories$ | async"
+                [value]="cat.id"
+              >
+                {{ cat.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Habilidade</mat-label>
+            <mat-select formControlName="hability_id">
+              <mat-option
+                *ngFor="let hab of hability.habilities$ | async"
+                [value]="hab.id"
+              >
+                {{ hab.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Altura"
+              type="number"
+              formControlName="height"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Peso"
+              type="number"
+              formControlName="weight"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Ataque"
+              formControlName="attack"
+              type="number"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Defesa"
+              formControlName="defense"
+              type="number"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Velocidade"
+              formControlName="speed"
+              type="number"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

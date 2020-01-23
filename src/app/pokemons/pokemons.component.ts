@@ -1,3 +1,4 @@
+import { PokemonService } from './pokemon.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemons.component.sass']
 })
 export class PokemonsComponent implements OnInit {
-  constructor() {}
+  constructor(private service: PokemonService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.service.fetchPokemons();
+  }
 }

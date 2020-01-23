@@ -1,7 +1,7 @@
 {
   "pokemons": [
     {
-      "id": "1",
+      "id": "186b06b1-7de8-4d17-8482-297d75cf28fb",
       "name": "bubasaur",
       "description": "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.",
       "height": 1.2,
@@ -15,7 +15,7 @@
   ],
   "categories": [
     {
-      "id": "1",
+      "id": "1a921bca-0156-4ea0-a8bd-b748090940xx",
       "name": "Seed"
     },
     {
@@ -25,7 +25,7 @@
   ],
   "habilities": [
     {
-      "id": "1",
+      "id": "186b06b1-7de8-4d17-8482-297d75cf28fb",
       "name": "Overgrown",
       "description": "Powers up Grass-type moves when the Pokémon is in trouble."
     },
