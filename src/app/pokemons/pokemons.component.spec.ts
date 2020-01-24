@@ -10,6 +10,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PokemonsComponent } from './pokemons.component';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { By } from '@angular/platform-browser';
 
 describe('PokemonsComponent', () => {
   let component: PokemonsComponent;

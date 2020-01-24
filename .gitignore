@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/e2e/results/*.png
 # Only exists if Bazel was run
 /bazel-out
 

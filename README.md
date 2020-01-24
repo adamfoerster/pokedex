@@ -1,27 +1,41 @@
 # Pokedex
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+## Instalação
 
-## Development server
+Para instalar o projeto use:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`npm i`
 
-## Code scaffolding
+## Servindo localmente
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para servir o projeto é necessário subir a API:
 
-## Build
+`json-server --watch db.json`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+... e o frontend:
 
-## Running unit tests
+`npm run serve`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+O app pode ser acesso pelo navegador em:
 
-## Running end-to-end tests
+`http://localhost:4200`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Executando testes unitários
 
-## Further help
+Fiz apenas alguns testes de exemplo usando o Jest. Para executar:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`npm run test`
+
+## Executando testes end-to-end
+
+Devido a falta de tempo também fiz apenas um teste de exemplo no puppeteer. Para executar:
+
+`npm run e2e`
+
+## Algumas considerações
+
+- Procurei utilizar schematics para instalar os recursos que utilizei (Material, Jest, Puppeteer, Prettier...) assim evitando fazer as configurações manualmente.
+- Usei arquivos scss invés de sass simplesmente pela retrocompatibilidade com css (todo css é scss válido, o mesmo não é verdadeiro para sass).
+- Usei gerenciamento de estados usando BehaviorSubjects pela simplicidade e facilidade de trabalho com RxJS.
+- Tive alguns imprevistos que me impediram de colocar todos os recursos que desejava mas estou a disposição para tirar qualquer dúvida.
+- Fiz o Design responsivo apenas na tela de pokemons, as telas dos CRUDS de Habilidade e Categoria deixei simples.

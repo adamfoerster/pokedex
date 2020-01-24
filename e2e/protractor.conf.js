@@ -1,3 +1,4 @@
+var puppeteer = require('puppeteer');
 // @ts-check
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
@@ -11,7 +12,11 @@ exports.config = {
   allScriptsTimeout: 11000,
   specs: ['./src/**/*.e2e-spec.ts'],
   capabilities: {
-    browserName: 'chrome'
+    browserName: 'chrome',
+    chromeOptions: {
+      args: ['--headless', '--no-sandbox', '--disable-dev-shm-usage'],
+      binary: puppeteer.executablePath()
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',

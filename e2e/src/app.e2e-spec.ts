@@ -1,28 +1,10 @@
-import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { app } from './app.po';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
-
-  beforeEach(() => {
-    page = new AppPage();
-  });
-
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('pokedex app is running!');
-  });
-
-  afterEach(async () => {
-    // Assert that there are no errors emitted from the browser
-    const logs = await browser
-      .manage()
-      .logs()
-      .get(logging.Type.BROWSER);
-    expect(logs).not.toContain(
-      jasmine.objectContaining({
-        level: logging.Level.SEVERE
-      } as logging.Entry)
-    );
-  });
+it('should display welcome message', async () => {
+  await app.getBrowserPage();
+  await app.sleep(2000);
+  await app.screenshot('pokedex.png');
+  await app.waitForSelector('.mat-toolbar span');
+  const title = await app.getText('.mat-toolbar span');
+  expect(title).toEqual('Pokedex');
 });
